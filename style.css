@@ -1,0 +1,130 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  font-family: Arial, sans-serif;
+}
+
+/*Global CSS */
+.obj-width {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 15px; /* added padding for small screens */
+}
+
+nav {
+  background-color: rgb(124, 91, 154);
+  box-shadow: 0 7px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.3rem 0;
+}
+
+.navbar .logo {
+  color: white;
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-size: 2.2rem;
+}
+
+#search-input {
+  max-width: 400px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  color: #333;
+}
+
+#search-button {
+  padding: 10px 20px;
+  background-color: rgb(196, 156, 230);
+  color: white;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+/* Blog container */
+#blog-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 3rem 0;
+  flex-wrap: wrap;
+}
+
+/* Blog card */
+.blog-card {
+  flex: 1 1 280px;   /* 👈 flexible width instead of fixed */
+  max-width: 300px;  /* 👈 don’t let it grow too big */
+  cursor: pointer;
+  border: 1px solid #2d4c50;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 10px;
+}
+
+.blog-card:hover {
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Image should fit card */
+.blog-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+/* Title and text */
+.blog-card h2 {
+  font-size: 1.5rem;
+  color: #141414;
+  font-weight: 500;
+}
+
+.blog-card p {
+  margin: 0 0 15px;
+  padding-top: 0.7rem;
+  font-size: 1.1rem;
+}
+
+/* 📱 Mobile Fix */
+@media (max-width: 500px) {
+  nav {
+    padding: 0 15px;
+  }
+
+  .navbar .logo {
+    font-size: 1.6rem;
+  }
+
+  #search-input {
+    width: 130px;
+    padding: 8px 10px;
+    font-size: 16px;
+  }
+
+  .blog-card {
+    flex: 1 1 100%;   /* 👈 now full width on small screen */
+    max-width: 100%;
+    margin: 10px 0;
+  }
+
+  .blog-card img {
+    height: auto; /* let image resize naturally */
+  }
+}
